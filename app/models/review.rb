@@ -2,6 +2,8 @@ class Review < ActiveRecord::Base
   belongs_to :restaurant
   belongs_to :reviewer, class_name: 'User'
   validates :body, presence: true
+  validates :rating, presence: true
+  validates :reviewer, presence: true
   validates :rating, numericality: {only_integer: true,
     greater_than: 0,
     less_than: 6 }
