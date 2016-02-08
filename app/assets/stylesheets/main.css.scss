@@ -1,0 +1,24 @@
+form {
+  div {
+    padding: 4px 0;
+    label {
+      display: inline-block;
+      width: 200px;
+    }
+  }
+}
+
+.field_with_errors {
+  input {
+    outline: 1px solid red;
+  }
+}
+.error_report {
+  color:red;
+}
+.flash-notice {
+  color: green;
+}
+.flash-error, .flash-alert {
+  color: red;
+}
