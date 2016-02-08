@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash.notice = 'Welcome back'
-      redirect_to new_session_path
+      redirect_to root_path
     else
       render :new
     end
