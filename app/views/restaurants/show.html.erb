@@ -1,0 +1,22 @@
+<h1><%= @restaurant.name %></h1>
+<%= @restaurant.cuisine %>
+
+<%= render @restaurant.reviews %>
+
+
+<%= form_for [@restaurant, @review] do |f| %>
+   <div>
+     <%= f.label :rating %>
+     <%= f.select :rating, ['Please choose one', 1,2,3,4,5]%>
+   </div>
+   <div>
+     <%= f.label :body %>
+     <%= f.text_area :body, rows:10, cols:80 %>
+   </div>
+
+   <div>
+     <%= f.submit %>
+   </div>
+   
+
+<% end %>
