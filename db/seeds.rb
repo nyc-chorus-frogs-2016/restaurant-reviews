@@ -20,7 +20,7 @@ cuisines = ['American', 'Thai', 'French', 'Italian', 'Japanese', 'Mexican', 'Spa
     cuisine:cuisines.sample,
     address: Faker::Address.street_address,
     city: Faker::Address.city,
-    state: Faker::Address.state,
+    state: Faker::Address.state_abbr,
     zip: Faker::Address.zip
    )
 end
