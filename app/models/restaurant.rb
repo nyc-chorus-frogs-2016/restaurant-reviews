@@ -4,4 +4,8 @@ class Restaurant < ActiveRecord::Base
   validates :creator, presence: true
   validates :name, presence: true
   validates :cuisine, presence: true
+
+  def editable_by? user
+    creator == user
+  end
 end
