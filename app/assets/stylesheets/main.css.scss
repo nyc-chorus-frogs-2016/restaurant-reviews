@@ -20,9 +20,18 @@ form {
 .error, .error_report {
   color:red;
 }
-.flash-notice {
-  color: green;
-}
-.flash-error, .flash-alert {
-  color: red;
+
+#flash-container {
+
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: #DEF;
+
+  .flash-notice {
+    color: green;
+  }
+  .flash-error, .flash-alert {
+    color: red;
+  }
+
 }
