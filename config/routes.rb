@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]
-  resources :restaurants, only: [:index, :show] do
+  resources :restaurants, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:create]
   end
   root 'restaurants#index'
