@@ -1,4 +1,8 @@
 <h1>Restaurants</h1>
+Sort: <%= link_to 'Name', restaurants_path %> |
+<%= link_to 'Cuisine', restaurants_path({order: :cuisine}) %> |
+<%= link_to 'Rating', restaurants_path({order: :rating}) %>
+
 <ul id="restaurant-index">
   <%= render @restaurants %>
 </ul>

@@ -2,7 +2,14 @@ class RestaurantsController < ApplicationController
   before_action :ensure_owner, only: [:edit, :update, :destroy]
 
   def index
-    @restaurants = Restaurant.all
+    if  params[:order] == "rating"
+      @restaurants = Restaurant.by_average_rating
+
+    elsif params[:order] == "cuisine"
+      @restaurants = Restaurant.order([:cuisine, :name])
+    else
+      @restaurants = Restaurant.order(:name)
+    end
   end
 
   def show

@@ -1,1 +1,4 @@
-<li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+<li class="restaurant-list-item"><%= link_to restaurant.name, restaurant_path(restaurant) %>
+(<%= restaurant.cuisine %>)
+Rating: <%= round_to_1_place(restaurant.average_rating) %>
+</li>
