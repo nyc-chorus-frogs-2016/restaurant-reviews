@@ -11,4 +11,8 @@ class Restaurant < ActiveRecord::Base
   def editable_by? user
     creator == user
   end
+
+  def reviewable_by? user
+    creator != user
+  end
 end
