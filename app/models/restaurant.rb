@@ -1,4 +1,5 @@
 class Restaurant < ActiveRecord::Base
+  include ParamAware
   belongs_to :creator, class_name: 'User'
   has_many :reviews
   validates :creator, presence: true

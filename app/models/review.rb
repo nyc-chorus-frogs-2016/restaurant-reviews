@@ -1,4 +1,5 @@
 class Review < ActiveRecord::Base
+  include ParamAware
   belongs_to :restaurant
   belongs_to :reviewer, class_name: 'User'
   validates :body, presence: true
@@ -9,5 +10,5 @@ class Review < ActiveRecord::Base
     less_than: 6 }
 
   delegate :username, to: :reviewer, allow_nil: true
-  
+
 end
