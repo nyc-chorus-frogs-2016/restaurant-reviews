@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe User do
 
+  it {should have_many :restaurants}
+  it {should have_many :reviews}
+  it {should validate_presence_of :email}
+
   it 'responds to email' do
     u = User.new
     expect(u).to respond_to(:email)
