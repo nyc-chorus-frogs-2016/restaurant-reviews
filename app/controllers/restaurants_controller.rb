@@ -4,7 +4,6 @@ class RestaurantsController < ApplicationController
   def index
     if  params[:order] == "rating"
       @restaurants = Restaurant.by_average_rating
-
     elsif params[:order] == "cuisine"
       @restaurants = Restaurant.order([:cuisine, :name])
     else
