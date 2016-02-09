@@ -41,3 +41,16 @@ form {
     font-style: italic
   }
 }
+
+dl.restaurant-data dd {
+  display: inline;
+  margin: 0;
+}
+dl.restaurant-data dd:after{
+  display: block;
+  content: '';
+}
+dl.restaurant-data dt{
+  display: inline-block;
+  min-width: 100px;
+}

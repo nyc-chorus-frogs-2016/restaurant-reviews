@@ -6,6 +6,8 @@ class Restaurant < ActiveRecord::Base
   validates :name, presence: true
   validates :cuisine, presence: true
 
+  delegate :username, to: :creator, prefix:true
+
   def editable_by? user
     creator == user
   end
