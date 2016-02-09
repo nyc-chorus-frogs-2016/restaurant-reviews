@@ -15,4 +15,13 @@ class Restaurant < ActiveRecord::Base
   def reviewable_by? user
     creator != user
   end
+
+  def average_rating
+    reviews.average(:rating)  || 0
+  end
+
+  def self.by_average_rating
+     join_clause = 'left outer join reviews on reviews.restaurant_id = restaurants.id'
+     joins(join_clause).group(:id).order('avg(reviews.rating) desc nulls last')
+  end
 end
