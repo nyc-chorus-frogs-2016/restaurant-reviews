@@ -10,6 +10,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def latest
+    @latest = Review.includes(:restaurant).order(created_at: :desc).limit(10)
+  end
+
   private
 
   def create_review restaurant

@@ -1,0 +1,19 @@
+<h1>Latest Reviews</h1>
+
+<% @latest.each do |review| %>
+  <div class="review">
+
+   <div class="author-strap">Review from <%=  review.username %>
+     at <%= std_format_date review.created_at %>
+   </div>
+
+   <div>
+     <%= review.body %>
+   </div>
+
+   <div class="restaurant-summary" data-restaurant-id="<%= review.restaurant.id %>" >
+     Restaurant: <%= review.restaurant.name %> (<%= review.restaurant.cuisine %>)
+   </div>
+
+  </div>
+<% end %>
